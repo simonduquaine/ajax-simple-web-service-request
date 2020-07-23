@@ -1,0 +1,50 @@
+html, body, .container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.container,
+.overlay:before {
+  background: url("/ajax-simple-web-service-request/forest.jpg") no-repeat fixed 0 0/cover;
+}
+
+.container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.overlay {
+  max-height: 400px;
+  margin: 0 auto;
+  max-width: 768px;
+  overflow: hidden;
+  padding: 50px;
+  position: relative;
+  color: white;
+  font-family: 'Lato';
+  font-size: larger;
+  position: relative;
+  text-align: center;
+  z-index: 0;
+}
+
+.overlay:before {
+  content: '';
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+/*# sourceMappingURL=styles.css.map */
