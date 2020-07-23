@@ -1,10 +1,14 @@
-async function getData(){
-    let response = await fetch('https://thatsthespir.it/api');
-    let data = await response.json();
-    return data;
+let xhr = new XMLHttpRequest;
+xhr.open('GET', 'https://thatsthespir.it/api', true)
+xhr.onload = function(){
+    if (this.status === 200){
+    let data = JSON.parse(this.responseText);
+    document.getElementsByTagName('img')[0].setAttribute("src", data.photo);
+    document.getElementsByTagName('img')[0].setAttribute("width", '300px');
+    document.getElementById('author').innerHTML = '<b>' + data.author + '</b>'; 
+    document.getElementById('quotes').innerHTML = data.quote;
+    }
 }
 
-getData()
-.then(data => {
-    document.getElementById('quote').innerHTML = data.quote + '<br>' + '-' + '<br>' + '<b>' + data.author + '</b>';
-});
+xhr.send();
+
